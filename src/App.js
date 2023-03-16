@@ -1,9 +1,9 @@
-import loginform from "./components/loginform";
+import Loginform from "./components/loginform";
 
 function App() {
   return (
     <>
-    <loginform />
+    <Loginform />
     </>
   );
 }

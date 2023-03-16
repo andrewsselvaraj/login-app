@@ -4,17 +4,17 @@ import axios from "axios";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post("http://107.155.116.31:9888/login", { username, password });
       console.log(response.data);
-      setError("");
+      setMessage("Login Successful");
     } catch (error) {
-      console.error(error);
-      setError("Invalid username or password");
+      console.log(error);
+      setMessage("Invalid username or password");
     }
   };
 
@@ -41,7 +41,7 @@ const Login = () => {
       <div>
         <button type="submit">Log In</button>
       </div>
-      {error && <div>{error}</div>}
+      {message && <div>{message}</div>}
     </form>
   );
 };
