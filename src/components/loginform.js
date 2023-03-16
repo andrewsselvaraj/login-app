@@ -9,7 +9,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/login", { username, password });
+      const response = await axios.post("http://107.155.116.31:9888/login", { username, password });
       console.log(response.data);
       setError("");
     } catch (error) {
